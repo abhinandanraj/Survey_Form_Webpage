@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato");
+
+body {
+  font-family: Lato, Arial;
+  background-image: linear-gradient(45deg, rgba(170, 204, 0, 0.5), rgba(0, 172, 95, 0.7)) , url("https://raw.githubusercontent.com/abhinandanraj/Survey_Form_Webpage/main/img/floral-1814372_1920.jpg");
+  color: #FCFCFC;
+  text-align: center;
+}
+
+#description {
+  font-weight: 600 ;
+}
+
+form {
+  margin: auto 5%;
+  padding: 30px 10%;
+  background-color: #FFFD;
+  text-align: left;
+  font-size: 20px;
+  color: #007F5F;
+  border-radius: 8px;
+}
+
+#known-pg > label, #best-pg > label {
+  display:flex;
+  align-content: center;
+  margin-top: 10px;
+}
+input:not([type="radio"]):not([type="checkbox"]) , select, textarea {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: #CCC 1px solid;
+  margin-top: 5px;
+  font-size: 15px;
+  padding: 5px;
+  color: #001F3F;
+}
+
+select{ background-color:#FFF;}
+textarea {
+  min-height: 150px;
+  max-height: 500px;
+  max-width: 100%;
+}
+
+form > div {
+  padding-bottom: 20px;
+}
+
+#submit {
+  color: #FFF;
+  font-weight: 600;
+  background-color: #55A630;
+  border: none;
+  height: 50px;
+}
+
+#submit:hover{
+  background-color: #007f5f;
+}
+
+label input[type="checkbox"], 
+label input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark , .choosemark{
+  position: ralative;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #FFF;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: #CCC 1px solid; 
+}
+
+.choosemark { border-radius: 50%;}
+
+label:hover input ~ .checkmark ,
+label:hover input ~ .choosemark {
+  background-color: #EEE;
+  cursor: pointer;
+}
+
+label input:checked ~ .checkmark,
+label input:checked ~ .choosemark{
+  background-color: #06D6A0;
+  border-color: #FFFF;
+}
+
+.checkmark:after ,
+.choosemark:after {
+  content: "";
+  position: relative;
+  display: none;
+}
+
+label input:checked ~ .checkmark:after,
+label input:checked ~ .choosemark:after {
+  display: block;
+}
+
+label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label .choosemark:after {
+  left: 30%;
+  top: 30%;
+  width: 10px;
+  height: 10px;
+  background-color: #FFF;
+  border-radius: 50%; 
+}
+
+    </style>
+  </head>
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p1 id="description">Help us to improve the platform and Learn Yourself Better. </p1>
+  <form id="survey-form ">
+      <div id="name">
+          <label id="name-label">
+              <p>Name</p><input
+              type="text"
+        
+              name="name"
+              id="name"
+              pattern="[A-Za-z]{2,}"
+              title="name must be at least one character long without numbers or special characters"
+              placeholder="eg. Abhinandan Raj"
+              required
+            />
+          </label>
+      </div>
+      <div id="email">
+          <label id="email-id">
+              <p>Email</p><input
+              type="email"
+            
+              name="email"
+              id="email"
+              placeholder="eg. abhinandanraj@gmail.com"
+              required
+            />
+          </label>
+      </div>
+      <div id="number ">
+          <label id="number-label">
+              <p>Age</p><input
+              type="number"
+              max="90"
+              min="12"
+            
+              name="age"
+              placeholder="eg. 17"
+              id="number"
+              required
+            />
+          </label>
+      </div>
+      <div id="dropdown">
+          <p> Select Who you are? </p>
+          <select> 
+            <option>Nothing</option>
+            <option>Coder</option>
+            <option>Programmer</option>
+            <option>Hacker</option>
+          </select> <br/>
+        </div>
+        <div id="best-pg">
+          What is your best programming language? <br/>
+          <label>
+            <input class="radio" name="pg_lang" type="radio">
+            <span class="choosemark"> </span>
+            Python 
+          </label>
+          <label>
+            <input name="pg_lang" type="radio">
+            <span class="choosemark"> </span> JavaScript 
+          </label>
+          <label>
+            <input name="pg_lang" type="radio">
+            <span class="choosemark"> </span> C# 
+          </label>
+          <label>
+            <input name="pg_lang" type="radio">
+            <span class="choosemark"> </span> C++
+          </label>
+        </div>
+        <div id="known-pg">
+          <p> What programming languages you know?</p>
+          <label>
+            <input name="known" type="checkbox" value="C++">
+            <span class="checkmark"></span> C++
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="C#">
+            <span class="checkmark"></span> C#
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="Python">
+            <span class="checkmark"></span> Python
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="JavaScript">
+            <span class="checkmark"></span> JavaScript
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="Java">
+            <span class="checkmark"></span> Java
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="Php">
+            <span class="checkmark"></span> Php
+          </label>
+          <label>
+            <input name="known" type="checkbox" value="Other">
+            <span class="checkmark"></span> Other
+          </label>
+        </div>
+        <div>
+          <p>What else you would like us to know?</p>
+          <textarea placeholder="Type any additional comments here ..."></textarea>
+        </div>
+        <input type="submit" value="Submit" id="submit"/>
+  </form>
+ 
+</body>
+</html>
